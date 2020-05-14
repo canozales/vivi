@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coming Soon</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/whin.css' %}">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <div class="baik">
+      <p>Bisnis sedang dalam pembangunan</p>
+      <h1>COMING SOON</h1>
+      <hr>
+      <p id="eksekusi"></p>
+    </div>
+
+  </header>
+</body>
+
+  <script>
+
+    var countDown = new Date("Jan 1, 2021 00:00:00").getTime();
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDown - now;
+
+    var days = Math.floor(distance / (1000 *60*60*24));
+    var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+    var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+    var seconds = Math.floor((distance % (1000*60))/(1000));
+
+    document.getElementById("eksekusi").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      if (distance<0){
+        document.getElementById("eksekusi").innerHTML = "EXPIRED";
+      }
+    },1000);
+
+
+  </script>
+  <script type="text/javascript" src="{% static 'blog/particles.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'blog/app.js' %}"></script>
+</html>

@@ -1,0 +1,275 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %} Burung {% endblock title %}
+{% block nav %}
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-home' %}" >Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" style="cursor: pointer;">Burung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/makanan/">Makanan</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-comments' %}">Komentar</a>
+            </li>
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/coming-soon/">Vivisakura Corp</a>
+            </li>
+
+           <li class="nav-item dropdown">
+               {% if user.is_authenticated %}
+               <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+
+               {% else %}
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Membership
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item cey" href="{% url 'login' %}">Login</a>
+              <a class="dropdown-item cey" href="{% url 'register' %}" >Register</a>
+            </div>
+               {% endif %}
+          </li>
+{% endblock nav %}
+
+{% block content %}
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'blog/img/burung1.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block atur">
+        <h5>Love Bird</h5>
+        <p>Burung Yang Hanya Memiliki 1 Pasangan Seumur Hidup</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'blog/img/burung2.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block atur">
+        <h5>Burung Dara</h5>
+        <p>Burung Yang Makannya Banyak Kayak Vivi</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'blog/img/burung3.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block atur">
+        <h5>Burung Anis</h5>
+        <p>Burung Yang Pemalu tidak seperti Vivi</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    <div class="container kontainer">
+      <div class="row" style="margin-top:10px;">
+        <div class="col-lg-7 col-md-12">
+          <h1 class="text-center mb-4 mt-4" style="font-family: 'Prata', sans-serif; font-size:28px;">Burung Kesukaan Vivisakura</h1>
+          <div class="progress mb-3" style="height: 45px">
+
+               <div class="progress-bar p-3 text-left bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 91%; font-size: 18px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Cenderawasih Merah 91%
+              </div>
+          </div>
+
+          <div class="progress mb-3" style="height: 45px">
+            <div class="progress-bar p-3 text-left bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 70%; font-size: 18px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Maleo Senkawor 70%
+            </div>
+          </div>
+
+          <div class="progress mb-3" style="height: 45px">
+            <div class="progress-bar p-3 text-left bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 46%; font-size: 18px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Merak Hijau 46%
+            </div>
+          </div>
+
+          <div class="progress mb-3" style="height: 45px">
+            <div class="progress-bar p-3 text-left bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 57%; font-size: 18px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Elang Jawa 57%
+            </div>
+          </div>
+
+          <div class="progress" style="height: 45px">
+            <div class="progress-bar p-3 text-left bg-primary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 82%; font-size: 18px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Jalak Bali 82%
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 kanan col-md-12">
+          <h1 class="mt-4 mb-4 text-center" style="font-family: 'Prata', sans-serif;font-size:28px;">Panduan Memelihara Burung</h1>
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link pand" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Memandikan Burung
+                  </button>
+                </h2>
+              </div>
+
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    Sebelum kita memandikan burung, sebaiknya kita mengangin-anginkannya terlebih dahulu selama 20 menit di halaman. Hal ini bertujuan agar burung Anda tidak kaget setelah masa istirahat atau tidurnya. Setelah itu Anda bisa memandikannya. Nah pada saat burung sedang masa over birahi, Anda bisa juga  pada malam hari memandikannya sekitar jam 7-9 malam.
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed pand" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                   Melatih Burung
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  Pengenalan termasuk faktor penting dalam latihan agar burung cepat jinak. Oleh karena itu, sering-seringlah mengelus burung Anda sebagai tanda perkenalan. Sebelum berangkat kerja, burung dielus-elus dulu. Kemudian pulangnya dielus-elus lagi. Jika dilakukan secara rutin, burung akan merasa sangat disayang.
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed pand" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Menidurkan Burung
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    Baringkan burung dengan dada dan perut yang menempel pada lantai atau permukaan meja. Atur kepalanya agar bisa menyelip di bagian sayapnya, seperti yang lazim dilakukan unggas saat sedang tidur. Tahan posisi tersebut selama beberapa detik, lalu lepaskan. Unggas akan tetap berada dalam posisi tersebut hingga akhirnya tertidur.
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                  <button class="btn btn-link pand" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    Memanggil Burung
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                  Jika Anda mengetahui ketika burung terbang, panggil dengan suara lembut namun keras. Jika tiba-tiba burung menyadari sedang berada di alam bebas dan tidak menginginkannya, burung akan segera kembali ke rumah mengikuti bunyi suara Anda. Melihat sangkarnya bisa mendorong burung untuk segera terbang ke arah Anda.
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container-fluid pt-3" style="margin-bottom:-35px;">
+<h1 class="text-center mt-3 mb-3" style="font-size: 30px;font-family: 'Prata', serif;">Vivisakura Birdshop</h1>
+      <div class="row">
+
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="{% static 'blog/img/burung4.jpg' %}" height="175px" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Burung Hantu</h5>
+              <p class="card-text">Lucu dan Imut</p>
+              <p style="color: orange" >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </p>
+
+              <a style="width: 100%; margin-bottom: 10px" class="btn btn-primary text-white">Rp 1.000.000</a>
+              <a style="width: 100%;" href="/coming-soon/" class="btn btn-success">Beli</a>
+             </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="{% static 'blog/img/burung5.jpg' %}" height="175px" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Burung Elang</h5>
+              <p class="card-text">Keren dan Elegan</p>
+              <p style="color: orange" >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </p>
+              <a style="width: 100%; margin-bottom: 10px" class="btn btn-primary text-white">Rp 1.500.000</a>
+              <a style="width: 100%;" href="/coming-soon/" class="btn btn-success">Beli</a>
+             </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="{% static 'blog/img/burung.png' %}" height="175px" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Burung Unta</h5>
+              <p class="card-text">Bisa Dikendarain</p>
+              <p style="color: orange" >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <a style="width: 100%; margin-bottom: 10px" class="btn btn-primary text-white">Rp 30.000.000</a>
+              <a style="width: 100%;" href="/coming-soon/" class="btn btn-success">Beli</a>
+             </div>
+          </div>
+        </div>
+
+          <div class="col-md-3 mb-3">
+          <div class="card">
+            <img src="{% static 'blog/img/burung6.jpg' %}" height="175px" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Pterodactyl</h5>
+              <p class="card-text">Burung Dinosaurus</p>
+              <p style="color: orange" >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </p>
+              <a style="width: 100%; margin-bottom: 10px" class="btn btn-primary text-white">Cuma Mau Pamer</a>
+              <a style="width: 100%;" class="btn btn-success text-white">NFS</a>
+             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+<br>
+{% endblock content %}

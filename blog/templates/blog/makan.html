@@ -1,0 +1,206 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Manrope&family=Trade+Winds&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" type="text/css" href="{% static 'blog/fontawesome-free-5.10.2-web/css/all.css' %}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/dashboard/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/makan.css' %}">
+
+    <title>Makanan</title>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#f2f2f2;font-family: 'El Messiri', sans-serif; padding-top: 12px;">
+      <div class="container">
+        <!-- fixed-top biar navbar selalu disitu ketika discroll -->
+        <a class="navbar-brand" href="#">Vivisakura</a>
+
+        <button class="navbar-toggler jml" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger"  href="{% url 'blog-home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/burung/">Burung</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" style="cursor: pointer;">Makanan</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-comments' %}">Komentar</a>
+            </li>
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/coming-soon/">Vivisakura Corp</a>
+            </li>
+
+           <li class="nav-item dropdown">
+               {% if user.is_authenticated %}
+               <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+
+               {% else %}
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Berlangganan
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item cey" href="{% url 'login' %}">Login</a>
+              <a class="dropdown-item cey" href="{% url 'register' %}" >Register</a>
+            </div>
+               {% endif %}
+          </li>
+
+          </ul>
+        </div>
+      </div>
+   </nav>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="font-family: 'Trade Winds', cursive;">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 font-weight-normal">Makanan</h1>
+    <p class="lead font-weight-normal">Rekomendasi Makanan Lezat</p>
+    <a class="btn btn-outline-secondary foc">Mari Makan</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block ab"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block a"></div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Indomie Goreng</h2>
+      <p class="lead">Ramen terlezat dunia</p>
+    </div>
+    <div class="bg-light shadow-sm mx-auto a1" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+  <div class="bg-dark text-white mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">Indomie Kuah</h2>
+      <p class="lead">Ramen terlezat dunia</p>
+    </div>
+    <div class="bg-dark shadow-sm mx-auto a2" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">Seblak</h2>
+      <p class="lead">Rasa kuahnya sedap dengan pedas yang khas</p>
+    </div>
+    <div class="bg-light shadow-sm mx-auto a3" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Nasi Tutug Oncom</h2>
+      <p class="lead">Nasi yang ditumbuk dan dicampur oncom</p>
+    </div>
+    <div class="bg-light shadow-sm mx-auto a4" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-dark text-white mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">Mie Lendir</h2>
+      <p class="lead">Mie dengan kuahnya yang lezat</p>
+    </div>
+    <div class="bg-white shadow-sm mx-auto a5" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+  <div class="bg-dark text-white mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Bak Kut Teh</h2>
+      <p class="lead">Sup daging babi yang bertulang</p>
+    </div>
+    <div class="bg-white shadow-sm mx-auto a6" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+</div>
+
+<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">Nasi Padang</h2>
+      <p class="lead">Makanan khas Minangkabau, terlezat</p>
+    </div>
+    <div class="bg-white shadow-sm mx-auto a7" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+  <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">Ketoprak</h2>
+      <p class="lead">Makanan ketupat dengan kuah kacang</p>
+    </div>
+    <div class="bg-white shadow-sm mx-auto a8" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+</div>
+
+<footer class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <p class="d-block mb-3 text-muted">Canozales Company</p>
+      <p class="d-block mb-3 text-muted">&copy; 15 February 2020</p>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Games</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted">Mobile Legend</a></li>
+        <li><a class="text-muted">Worms Zone</a></li>
+        <li><a class="text-muted">Identity V-1</a></li>
+        <li><a class="text-muted">LifeAfter</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Movies</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted">A Quiet Place II</a></li>
+        <li><a class="text-muted">A Quiet Place</a></li>
+        <li><a class="text-muted">Love in Trouble</a></li>
+        <li><a class="text-muted">Love with Flaws</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Besties</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted">Whintia Dewi</a></li>
+        <li><a class="text-muted">Syafira Darayanti</a></li>
+        <li><a class="text-muted">Mayang Yuventia</a></li>
+        <li><a class="text-muted">Maulindasri</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Personalities</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted">Ketawanya Lucu</a></li>
+        <li><a class="text-muted">Suka Ketawa</a></li>
+        <li><a class="text-muted">Suka Makan</a></li>
+        <li><a class="text-muted">Receh</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

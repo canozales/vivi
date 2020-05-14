@@ -1,0 +1,388 @@
+body{
+	overflow-x: hidden;
+
+
+}
+.tentang:focus{
+	box-shadow: none;
+}
+.jumbotron{
+	background-image: url(img/vi.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 430px;
+	border-radius: 0;
+	text-align: center;
+	margin-bottom: 0;
+
+font-family: 'Trade Winds', cursive;
+}
+
+.jumbotron .display-4{
+	color: white;
+}
+.jumbotron p{
+	color: white;
+}
+.jumbotron hr{
+	border-color: #4caf50;
+	width: 60%;
+}
+.jumbotron .btn{
+	background-color: rgb(0,0,0,0.4);
+	border: none;
+	width: 200px;
+	border-bottom:1px solid #4caf50;
+	border-top:1px solid #4caf50;
+	cursor: pointer;
+}
+.jumbotron .btn:hover{
+    border:1px solid #01fa09;
+}
+.joni{
+	color: #4caf50;
+}
+.joni:hover{
+	color:seagreen;
+	text-decoration: none;
+}
+.jml:focus{
+	display: none;
+}
+.alert{
+	margin-bottom: 0;
+}
+
+/*Burung*/
+.atur{
+	background-color: rgb(0,0,0,0.4);
+}
+
+.atur h5{
+	font-size: 25px;
+}
+.atur p{
+	font-size: 19px;
+}
+
+.kontainer h1{
+	font-size: 22px;
+	text-align: center;
+	margin-top: 25px;
+}
+.pand{
+	color: black;
+}
+.pand:hover{
+	text-decoration: none;
+	color: black;
+}
+.pand:focus{
+	text-decoration: none;
+}
+@media screen and (min-width: 960px){
+	.carousel img{
+		height: 550px;
+	}
+}
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+/*Modal dan Register*/
+.reg{
+  background-color: rgb(0,0,0,0.6);
+  color: white;
+  border:2px solid white;
+
+}
+.reg input{
+  background-color: rgb(0,0,0,0.1);
+  color: white;
+
+}
+.reg input:focus{
+  background-color: black;
+  border:1px solid #01fa09;
+  color: white;
+  box-shadow: none;
+}
+.axa:focus{
+	display: none;
+}
+.reg .adw{
+	color: white;
+
+}
+.reg .adw1{
+	color: white;
+}
+.reg .adw:hover{
+	border: 1px solid #FF4367;
+}
+.reg .adw1:hover{
+	border: 1px solid #4caf50;
+}
+.reg .adw1:focus{
+	box-shadow: none;
+}
+.reg .adw:focus{
+	box-shadow: none;
+}
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+@media (max-width: 950px) {
+    .ax2c img{
+        height:50px;
+    }
+}
+@media (max-width: 768px) {
+  footer p {
+    font-size: 14px;
+  }
+    .ax2b{
+    display: none;
+  }
+  .ax2c img{
+    height:400px;
+
+  }
+
+}
+@media (max-width: 576px) {
+    .ax2{
+    display:none;
+    }
+  .ax2a{
+    display:block !important;
+  }
+    .po1{
+    display:flex;
+  }
+  .we3{
+    font-size:23px !important;
+  }
+  .we4{
+    font-size:16px !important ;
+  }
+  .we1bs{
+    font-size:14px !important;
+  }
+}
+.ax2a {
+    text-align:center;
+}
+    .ax2c img{
+        height:300px;
+    }
+@media (max-width: 468px) {
+  footer p {
+    font-size: 11px;
+
+  }
+  .axb{
+  	font-size: 40px;
+  }
+  .jumbotron{
+ 	height: 400px;
+  }
+  footer{
+        padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media (max-width: 400px) {
+      .we1bs{
+    font-size:10px !important;
+  }
+}
+@media (max-width: 340px) {
+          .we1bs{
+    font-size:8px !important;
+  }
+}
+.cey:focus{
+	background-color: orange;
+}
+.dafte input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin:0
+}
+.loid{
+color: #0080ff;
+
+}
+.loid:hover{
+    color:#3333ff;
+    text-decoration:none;
+}
+.kotak{
+	width: 80%;
+	margin: auto;
+	margin-top: 50px;
+	padding: 30px;
+	box-shadow: 1px 2px 6px 1px gainsboro;
+}
+
+.kotmen{
+    width: 70%;
+	margin: auto;
+	margin-top: 50px;
+	background-color:white;
+	padding: 30px;
+	box-shadow: 1px 2px 6px 1px gainsboro;
+}
+.we1{
+    color:black;
+    font-size:19px;
+    font-family: 'Kelly Slab', cursive;
+}
+.we1bs{
+    color:black;
+    font-size:19px;
+    font-family: 'Kelly Slab', cursive;
+}
+.we1bs:hover{
+    color:#4caf50 !important;
+}
+.we1a{
+    color:black;
+    font-size:23px;
+    font-family: 'Kelly Slab', cursive;
+}
+.we1:hover{
+    color:#4caf50 !important;
+}
+.we2{
+    color:white;
+
+}
+.we2:hover{
+
+    color:white !important;
+}
+.we3{
+
+    font-size:30px;
+    font-family: 'Caveat Brush', cursive;
+}
+.we4{
+       font-family: 'Arsenal', sans-serif;
+       font-size:20px;
+}
+.wex{
+    text-align:center;
+    font-size:45px;
+
+    font-family: 'Fredericka the Great', cursive;
+}
+.wew{
+    font-size:40px;
+    font-family: 'Fredericka the Great', cursive;
+}
+.kotak2{
+    width: 90%;
+	margin: auto;
+	margin-top: 50px;
+	background-color:white;
+	padding: 30px;
+	box-shadow: 1px 2px 6px 1px gainsboro;
+}
+.kotak h2{
+	text-align: center;
+	font-size: 26px;
+}
+
+.kotak .form-group p{
+	margin-bottom: 0;
+	color: gray
+}
+.kotak input{
+	border-radius: 8px;
+}
+.awd img{
+	display: block;
+margin: auto;
+	width: 60%;
+
+}
+.awd{
+    width: 100%;
+	margin: auto;
+	margin-top: 50px;
+
+}
+
+/* Bagian Comments */
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 85px;
+  width: 85px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+.kotok{
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:30px;
+}
+.apd{
+    border-bottom:1px solid gainsboro;
+    padding-bottom:18px;
+}
+.as2{
+    width:80%;
+    margin:auto;
+    margin-top:40px;
+}

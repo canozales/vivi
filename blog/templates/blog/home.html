@@ -1,47 +1,117 @@
 <!--Ibarat Include di PHP biar gk banyak perulangan atas hal yang sama-->
 {% extends "blog/base.html" %}
+{% load static %}
+{% block title %} Vivisakura {% endblock title %}
+{% block nav %}
+              <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" style="cursor: pointer;">Home <span class="sr-only">(current)</span></a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/burung/">Burung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/makanan/">Makanan</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-comments' %}">Komentar</a>
+            </li>
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/coming-soon/">Perusahaan</a>
+            </li>
+
+           <li class="nav-item dropdown">
+               {% if user.is_authenticated %}
+               <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+
+               {% else %}
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Berlangganan
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item cey" href="{% url 'login' %}">Login</a>
+              <a class="dropdown-item cey" href="{% url 'register' %}" >Register</a>
+            </div>
+               {% endif %}
+          </li>
+{% endblock nav %}
 {% block content %}
 
-	{% for post in posts %}
+{% block komen %} {% endblock komen %}
 
-		<article class="media content-section">
-			<img class="rounded-circle article-img"  src="{{ post.author.profile.image.url}}">
-		  <div class="media-body">
-			<div class="article-metadata">
-			  <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-<!--			  <small class="text-muted">{{ post.date_posted }}</small>-->
-				<small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-			</div>
-			<h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-			<p class="article-content">{{ post.content }}</p>
-		  </div>
-		</article>
+{% block keluar %}{% endblock keluar %}
+	 <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-4 axb">Vivi Purnama</h1>
+        <hr class="my-4">
+        <p class="lead">Sawatara jalma ngungudag kabagjaan, nu sejenna na nyiptakeun kabagjaan</p>
+        <a class="btn btn-primary btn-lg tentang" href="{% url 'blog-about' %}" role="button">Tentang Aku</a>
+      </div>
+    </div>
 
-	{% endfor %}
 
-	{% if is_paginated %}
+<div class="container" style="margin-top:30px;">
+  <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-3">
+          <div class="card ax2c">
+            <img src="{% static 'blog/img/vi17.jpg' %}" class="card-img-top" height="300px" alt="...">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-3">
+          <div class="card ax2c">
+            <img src="{% static 'blog/img/vi13.jpg' %}" class="card-img-top" height="300px" alt="...">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-3">
+          <div class="card ax2c">
+            <img src="{% static 'blog/img/vi14.jpg' %}" class="card-img-top" height="300px" alt="...">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 mt-3">
+          <div class="card ax2c">
+            <img src="{% static 'blog/img/vi15.jpg' %}" class="card-img-top" height="300px" alt="...">
+          </div>
+        </div>
 
-		{% if page_obj.has_previous %}
-			<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
 
-		{% endif %}
 
-		{% for num in page_obj.paginator.page_range %}
-			{% if page_obj.number == num %}
-				<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-			{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-				<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-			{% endif %}
-		{% endfor %}
+  </div>
+</div>
 
-		{% if page_obj.has_next %}
-			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-		{% endif %}
+<div class="row">
 
-	{% endif %}
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+            {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }} alert-dismissible fade show"role="alert" style="width:80%; margin:auto;    margin-top:30px; margin-bottom:-20px;">
+                    {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+                  </div>
+                {% endfor %}
+              {% endif %}
+                {% block kotax %} {% endblock kotax %}
+
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
+                {% block kotax2 %} {% endblock kotax2 %}
+
+		</div>
+
+
+</div>
+
 
 {% endblock content %}
 

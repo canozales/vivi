@@ -1,12 +1,56 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
+{% block title %} Profile {% endblock title %}
+{% block nav %}
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-home' %}" >Home <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" style="cursor: pointer;">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/burung/">Burung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/makanan/">Makanan</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-comments' %}">Komentar</a>
+            </li>
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/coming-soon/">Vivisakura Corp</a>
+            </li>
+
+           <li class="nav-item dropdown">
+               {% if user.is_authenticated %}
+               <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+
+               {% else %}
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Berlangganan
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item cey" href="{% url 'login' %}">Login</a>
+              <a class="dropdown-item cey" href="{% url 'register' %}" >Register</a>
+            </div>
+               {% endif %}
+          </li>
+{% endblock nav %}
+
 {% block content %}
-    <div class="content-section">
+    <div class="kotak2 content-section">
       <div class="media">
         <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
         <div class="media-body">
-          <h2 class="account-heading">{{ user.username }}</h2>
-          <p class="text-secondary">{{ user.email }}</p>
+          <h2 class="account-heading we4">{{ user.username }}</h2>
+          <p class="text-secondary we1bs" style="cursor:pointer;">{{ user.email }}</p>
         </div>
       </div>
         <form method="POST" enctype="multipart/form-data">

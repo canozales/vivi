@@ -4,23 +4,27 @@ from .models import Post
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
 #redirect ke login page pas mau create Post dan semacam cuma user yang punya postnya sendiri yang bisa ubah postnya
 
-
 def home(request):
+    return render(request, 'blog/home.html')
+
+@login_required()
+def comments(request):
     # Dictionary
     context = {
-        'posts':Post.objects.all()
-    }
-    return render(request, 'blog/home.html', context)
+            'posts':Post.objects.all()
+     }
+    return render(request, 'blog/comments.html', context)
 
 
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/home.html'
+    template_name = 'blog/comments.html'
     context_object_name = 'posts'
     ordering = ['-date_posted'] # ini buat post diurutkan dari yang terbaru ke terlama
-    paginate_by = 2 # pembatasan buat pagination, 1 page cuma ada x post aja gitu
+    paginate_by = 10 # pembatasan buat pagination, 1 page cuma ada x post aja gitu
 
 
 class UserPostListView(ListView):
@@ -43,7 +47,7 @@ class PostDetailView(DetailView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView): # harus login dan harus owner dri post itu
     model = Post
-    success_url = '/'
+    success_url = '/comments/'
 
     def test_func(self): # biar orang gak bisa update post orang lain
         post = self.get_object()
@@ -81,20 +85,16 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 def about(request):
-    return render(request, 'blog/about.html', {'title':'Saya Hebat'})
-    # kalau cuma pendek langsung masukin aja, gk perlu buat di dictionary dulu
-    # posts = [ , dummy data , ecek2nya database pas awal2
-    #     {
-    #         'author': 'Cano',
-    #         'title' : 'Post',
-    #         'content' : 'First',
-    #         'date_posted' : 'August 28'
-    #     },
-    #     {
-    #         'author': 'Lala',
-    #         'title': 'Poster',
-    #         'content': 'Second',
-    #         'date_posted': 'March 28'
-    #     }
-    # ]
+    return render(request, 'blog/about.html')
 
+
+def burung(request):
+    return render(request, 'blog/burung.html')
+
+
+def makanan(request):
+    return render(request, 'blog/makan.html')
+
+
+def comsoon(request):
+    return render(request, 'blog/whin.html')

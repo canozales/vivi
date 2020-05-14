@@ -1,7 +1,245 @@
-{% extends "blog/base.html" %}
+{% load static %}
 
-{% block content %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<h1>Terima Kasih Kalkulator 2</h1>
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Manrope&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/fontawesome-free-5.10.2-web/css/all.css' %">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/aboutvi.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/lightbox.min.css' %}">
 
-{% endblock content %}
+
+
+    <title>Vivisakura</title>
+  </head>
+  <body>
+    <header>
+  <div class="collapse bg-warning" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4" style="font-family: 'Trade Winds', cursive;">
+          <h4 class="text-white mb-3">Tentang Vivi Purnama</h4>
+          <p class="text-muted">Vivi Purnama adalah seorang perempuan yang lahir di Cimahi pada tanggal 29 Desember 1998. Di usianya yang tak lagi muda, ia masih tekun tertawa tak kenal waktu dan tempat membawa kebahagiaan kepada orang di sekitarnya. <p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4" style="font-family: 'Trade Winds', cursive;">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a target="_blank" href="https://www.instagram.com/vivi_purnama/" style="color: gray">Follow on Instagram</a></li>
+            <li><a target="_blank" href="https://twitter.com/?lang=en" style="color: gray">Retweet on Twitter</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/" style="color: gray">Like on Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">  
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center" >
+        <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong style="font-family: 'Trade Winds', cursive;">Vivisakura</strong>
+      </a>
+      <button class="navbar-toggler x1" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<main role="main">
+
+  <section class="jumbotron a1 text-center">
+    <div class="container" >
+
+      <h1 class="text-white">Vivi Purnama</h1>
+      <p class="lead text-white mb-5">"Tertawa adalah suatu kebahagiaan, tertawalah selagi Anda bisa. Satu hari tanpa tertawa adalah hari yang terbuang sia-sia"</p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container gale">
+
+      <div class="row p1">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi11.jpg' %}" data-lightbox="mygallery"><img src="{% static 'blog/img/vi11.jpg' %}" width="100%" height="400"></a>
+
+            <div class="card-body">
+              <p class="card-text">Sudah lelah tertawa </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi11.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">December 22, 2017</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi12.jpg' %}" data-lightbox="mygallery"><img src="{% static 'blog/img/vi12.jpg' %}" width="100%" height="400"></a>
+
+            <div class="card-body">
+              <p class="card-text">Burung dulu, baru kamu</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi12.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">October 28, 2017</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi8.jpg' %}" data-lightbox="mygallery"> <img src="{% static 'blog/img/vi8.jpg' %}" width="100%" height="400"></a>
+
+            <div class="card-body">
+              <p class="card-text">Kehormatanku adalah kerecehanku</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi8.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">Unknown</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/wi.jpg' %}" data-lightbox="mygallery"> <img src="{% static 'blog/img/wi.jpg' %}" width="100%" height="400"></a>
+
+            <div class="card-body">
+              <p class="card-text">在天愿作比翼鸟，在地愿为连理枝。</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/wi.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">February 20, 2020</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi10.jpg' %}" data-lightbox="mygallery"> <img src="{% static 'blog/img/vi10.jpg' %}" width="100%" height="400"></a>
+
+            <div class="card-body">
+              <p class="card-text">Kalyanamitta berarti teman yang baik</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi10.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">February 16, 2020</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi7.jpg' %}" data-lightbox="mygallery"> <img src="{% static 'blog/img/vi7.jpg' %}" width="100%" height="400"></a>
+
+            <div class="card-body">
+              <p class="card-text">Goyang Karawang</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi7.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">29 February, 2020</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi1.jpg' %}" data-lightbox="mygallery"><img src="{% static 'blog/img/vi1.jpg' %}" width="100%" height="225"></a>
+
+            <div class="card-body">
+              <p class="card-text">Mencari jodoh sampai ke bulan</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi1.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">September 7, 2017</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi9.jpg' %}" data-lightbox="mygallery"><img src="{% static 'blog/img/vi9.jpg' %}" width="100%" height="225"></a>
+
+            <div class="card-body">
+              <p class="card-text">Mikirin burung</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi9.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">April 16, 2018</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="{% static 'blog/img/vi.jpg' %}" data-lightbox="mygallery"><img src="{% static 'blog/img/vi.jpg' %}" width="100%" height="225"></a>
+
+
+
+            <div class="card-body">
+              <p class="card-text">ITZY Purnama</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'blog/img/vi.jpg' %}" data-lightbox="mygallery">Melihat</a>
+
+                </div>
+                <small class="text-muted">February 16, 2020</small>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+<footer class="text-muted bg-white">
+  <div class="container">
+    <p class="float-right ax2b">
+      <a class="joni" href="#">Back to top</a>
+    </p>
+    <p class="ax2">Belum daftar membership? <a class="joni" href="#" data-toggle="modal" data-target="#staticBackdrop">Daftar sekarang</a> atau <a class="joni" target="_blank" href="https://www.instagram.com/vivi_purnama/">follow instagram vivi_purnama</a></p>
+    <p class="ax2">Website ini dirancang dan dibuat oleh penggemar Vivi Purnama &copy; Canozales Inc.</p>
+    <p class="ax2a" style="display:none">Copyright &copy; 2020 Canozales Company. All Rights Reserved</p>
+  </div>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="{% static 'blog/lightbox-plus-jquery.min.js' %}"></script>
+
+  </body>
+</html>

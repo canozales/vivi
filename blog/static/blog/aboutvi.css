@@ -1,0 +1,163 @@
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+.joni{
+  color: #4caf50;
+}
+.joni:hover{
+  color:seagreen;
+  text-decoration: none;
+}
+
+.jumbotron h1 {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+@media (max-width: 768px) {
+  footer p {
+    font-size: 14px;
+    }
+        .ax2b{
+    display: none;
+  }
+
+
+}
+@media (max-width: 576px) {
+      .ax2{
+    display:none;
+    }
+  .ax2a{
+    display:block !important;
+  }
+}
+@media (max-width: 468px) {
+  footer p {
+    font-size: 11px;
+
+  }
+
+  footer{
+        padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+  .ax2a {
+    text-align:center;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+.a1{
+  background-image: url(img/vi.jpg);
+  background-size: cover;
+  border-radius: 0px;
+}
+.p1 button:focus{
+  box-shadow: none;
+}
+.x1:focus{
+  display: none;
+}
+.axp{
+
+width: 100%;
+height: 100%;
+  text-decoration: none;
+  color: gray;
+
+}
+.axp:hover{
+
+  text-decoration: none;
+}
+.dafte input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin:0
+}
+.reg{
+  background-color: rgb(0,0,0,0.6);
+  color: white;
+  border:2px solid white;
+
+}
+.reg input{
+  background-color: rgb(0,0,0,0.1);
+  color: white;
+
+}
+.reg input:focus{
+  background-color: black;
+  border:1px solid #01fa09;
+  color: white;
+  box-shadow: none;
+}
+.axa:focus{
+  display: none;
+}
+.reg .adw{
+  color: white;
+
+}
+.reg .adw1{
+  color: white;
+}
+.reg .adw:hover{
+  border: 1px solid #FF4367;
+}
+.reg .adw1:hover{
+  border: 1px solid #4caf50;
+}
+.reg .adw1:focus{
+  box-shadow: none;
+}
+.reg .adw:focus{
+  box-shadow: none;
+}
+
+.gale img{
+    transition: 0.5s;
+}
+.gale img:hover{
+    filter: brightness(70%);
+}

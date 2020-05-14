@@ -1,20 +1,63 @@
-{% extends "blog/base.html" %}
+{% extends "blog/home.html" %}
+{% block nav %}
+              <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-home' %}" >Home <span class="sr-only">(current)</span></a>
+            </li>
 
-{% block content %}
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/burung/">Burung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/makanan/">Makanan</a>
+            </li>
+			<li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-comments' %}" style="cursor: pointer;">Komentar</a>
+            </li>
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/coming-soon/">Vivisakura Corp</a>
+            </li>
+
+           <li class="nav-item dropdown">
+               {% if user.is_authenticated %}
+               <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+
+               {% else %}
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Berlangganan
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item cey" href="{% url 'login' %}">Login</a>
+              <a class="dropdown-item cey" href="{% url 'register' %}" >Register</a>
+            </div>
+               {% endif %}
+          </li>
+{% endblock nav %}
+
+{% block komen %}
+<div class="kotmen" style="margin-bottom:50px;">
+
 
     <div class="content-section">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Hapus Post Anda</legend>
-                <h2>Are you sure mau hapus postnya ? {{ object.title }}</h2>
+                <legend class="border-bottom mb-4">Menghapus Post</legend>
+                <h2 class="we1a">Yakin mau hapus "{{ object.title }}" ?</h2>
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-danger" type="submit">Ya, Hapus</button>
-                <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">Gak mau, Cancle</a>
+                <button class="btn btn-outline-danger" type="submit">Hapus</button>
+                <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">Jangan</a>
             </div>
         </form>
-
     </div>
 
-{% endblock content %}
+</div>
+{% endblock komen %}

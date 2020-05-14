@@ -1,6 +1,5 @@
 {% load static %}
-<!--biar bisa load css atau js nya di directory static-->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -8,78 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <link rel="stylesheet" href="{% static 'blog/main.css' %}">
-
-
-	{% if title %}
-		<title>Django Blog - {{title}}</title>
-	{% else %}
-		<title>Django Blog</title>
-	{% endif %}
-
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Manrope&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Volkhov:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Arapey&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal&family=Caveat+Brush&family=Fredericka+the+Great&family=Kelly+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/fontawesome-free-5.10.2-web/css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/Bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/index.css' %}">
+      {% block link %} {% endblock link %}
+    <title>
+      {% block title %} {% endblock title %}
+    </title>
   </head>
-  <body>
-          <header class="site-header">
-          <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-            <div class="container">
-              <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarToggle">
-                <div class="navbar-nav mr-auto">
-                  <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-                  <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
-                </div>
-                <!-- Navbar Right Side -->
-                <div class="navbar-nav">
-                  {% if user.is_authenticated %}
-                      <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                      <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
-                      <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                  {% else %}
-                      <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                      <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </nav>
-        </header>
+  <body class="bg-light">
 
-        <main role="main" class="container">
-          <div class="row">
-            <div class="col-md-8">
-              {% if messages %}
-                {% for message in messages %}
-                  <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                  </div>
-                {% endfor %}
-              {% endif %}
-              {% block content %}{% endblock content %}
-            </div>
-            <div class="col-md-4">
-              <div class="content-section">
-                <h3>Our Sidebar</h3>
-                <p class='text-muted'>You can put any information here you'd like.
-                  <ul class="list-group">
-                    <li class="list-group-item list-group-item-light">Latest Posts</li>
-                    <li class="list-group-item list-group-item-light">Announcements</li>
-                    <li class="list-group-item list-group-item-light">Calendars</li>
-                    <li class="list-group-item list-group-item-light">etc</li>
-                  </ul>
-                </p>
-              </div>
-            </div>
-          </div>
-        </main>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f2f2f2
+
+;font-family: 'El Messiri', sans-serif; padding-top: 12px;">
+      <div class="container">
+        <!-- fixed-top biar navbar selalu disitu ketika discroll -->
+        <a class="navbar-brand" href="#">Vivisakura</a>
+
+        <button class="navbar-toggler jml" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            {% block nav %} {% endblock nav %}
+
+          </ul>
+        </div>
+      </div>
+   </nav>
+
+  {% block content %} {% endblock content %}
 
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<footer class="text-muted bg-white mt-5">
+  <div class="container">
+    <p class="float-right ax2b">
+      <a class="joni" href="#">Back to top</a>
+    </p>
+    <p class="ax2">Belum daftar membership? <a class="joni" href="{% url 'register' %}">Daftar sekarang</a> atau <a class="joni" target="_blank" href="https://www.instagram.com/vivi_purnama/">follow instagram vivi_purnama</a></p>
+    <p class="ax2">Website ini dirancang dan dibuat oleh penggemar Vivi Purnama &copy; Canozales Inc.</p>
+    <p class="ax2a" style="display:none">Copyright &copy; 2020 Canozales Company. All Rights Reserved</p>
+  </div>
+</footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

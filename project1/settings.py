@@ -131,14 +131,9 @@ MEDIA_URL = '/media/' # bagaimana cara kita akses MEDIA ROOT tersebut di browser
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = 'profile'
 
 LOGIN_URL = 'login' # bagian ini buat page yang login required
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USER_TLS = True
 
-EMAIL_HOST_USER = 'amaneejohny'
-EMAIL_HOST_PASS = 'AGeneration'
+

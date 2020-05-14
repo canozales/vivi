@@ -1,7 +1,51 @@
-{% extends "blog/base.html" %}
+{% extends "blog/home.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
+{% load static %}
+{% block title %} Login {% endblock title %}
+{% block nav %}
+              <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" style="cursor: pointer;">Home <span class="sr-only">(current)</span></a>
+            </li>
 
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/burung/">Burung</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/makanan/">Makanan</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'blog-comments' %}">Komentar</a>
+            </li>
+
+
+
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/coming-soon/">Vivisakura Corp</a>
+            </li>
+
+           <li class="nav-item dropdown">
+               {% if user.is_authenticated %}
+               <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">Logout</a>
+
+               {% else %}
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Berlangganan
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item cey" href="{% url 'login' %}">Login</a>
+              <a class="dropdown-item cey" href="{% url 'register' %}" >Register</a>
+            </div>
+               {% endif %}
+          </li>
+{% endblock nav %}
+
+{% block kotax %}
+ <div class="kotak">
     <div class="content-section">
         <form method="POST">
             {% csrf_token %}
@@ -10,16 +54,23 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Log in</button>
-                <small class="text-muted ml-2" >
-                    <a href="{% url 'password_reset' %}"> Forgot Password? </a>
-                </small>
+                <button style="width:100%; " class="btn btn-outline-primary" type="submit">Log in</button>
+
             </div>
         </form>
         <div class="border-top pt-3">
-            <small class="text-muted">Don't Have An Account ? <a class="ml-2" href="{% url 'register' %}">Sign Up</a></small>
+
+            <small  class="text-muted"><a class="loid" href="https://www.alodokter.com/pikun-gejala-demensia-yang-perlu-pengobatan" target="_blank">Lupa Password ?</a> <a class="ml-2 loid" href="{% url 'register' %}">Belum punya akun ?</a></small>
+
         </div>
 
     </div>
+ </div>
+{% endblock kotax %}
 
-{% endblock content %}
+{% block kotax2 %}
+<div class="awd">
+    <img src="{% static 'blog/img/pentol.png' %}">
+</div>
+{% endblock kotax2 %}
+
